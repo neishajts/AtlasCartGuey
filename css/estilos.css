@@ -131,6 +131,9 @@ header {
 .icon-menu {
   display: none;
 }
+h1 {
+  font-size: 24px;
+}
 main {
   width: 100%;
   max-width: 1220px;
