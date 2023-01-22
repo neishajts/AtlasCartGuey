@@ -1,68 +1,32 @@
 var size = 0;
 var placement = 'point';
-function categories_EstacionesClimaUCV_2(feature, value, size, resolution, labelText,
-                       labelFont, labelFill, bufferColor, bufferWidth,
-                       placement) {
-                switch(value.toString()) {case 'CASTANO-CABECERA':
-                    return [ new ol.style.Style({
-        image: new ol.style.Circle({radius: 4.0 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(48,18,59,1.0)'})}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    })];
-                    break;
-case 'MARACAY-AGRONOMIA':
-                    return [ new ol.style.Style({
-        image: new ol.style.Circle({radius: 4.0 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(27,229,181,1.0)'})}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    })];
-                    break;
-case 'MARACAY-C.E.N.I.A.P.':
-                    return [ new ol.style.Style({
-        image: new ol.style.Circle({radius: 4.0 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(251,185,56,1.0)'})}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    })];
-                    break;
-case 'MARACAY-LA TRINIDAD':
-                    return [ new ol.style.Style({
-        image: new ol.style.Circle({radius: 4.0 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(122,4,3,1.0)'})}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    })];
-                    break;}};
 
 var style_EstacionesClimaUCV_2 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
     };
-    var value = feature.get("Nombre");
+    var value = ""
     var labelText = "";
     size = 0;
-    var labelFont = "10px, sans-serif";
-    var labelFill = "#000000";
+    var labelFont = "13.0px \'Arial\', sans-serif";
+    var labelFill = "#ffffff";
     var bufferColor = "";
     var bufferWidth = 0;
     var textAlign = "left";
     var offsetX = 8;
     var offsetY = 3;
     var placement = 'point';
-    if ("" !== null) {
-        labelText = String("");
+    if (feature.get("Nombre") !== null) {
+        labelText = String(feature.get("Nombre"));
     }
-    
-var style = categories_EstacionesClimaUCV_2(feature, value, size, resolution, labelText,
-                          labelFont, labelFill, bufferColor,
-                          bufferWidth, placement);
+    var style = [ new ol.style.Style({
+        image: new ol.style.Circle({radius: 7.6 + size,
+            stroke: new ol.style.Stroke({color: 'rgba(255,255,255,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 4}), fill: new ol.style.Fill({color: 'rgba(0,0,0,1.0)'})}),
+        text: createTextStyle(feature, resolution, labelText, labelFont,
+                              labelFill, placement, bufferColor,
+                              bufferWidth)
+    })];
 
     return style;
 };
