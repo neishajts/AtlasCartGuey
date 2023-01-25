@@ -1,54 +1,54 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="stylesheet" href="../icon/style.css">
-        <link rel="stylesheet" href="../css/estilos.css">
-        <link rel="stylesheet" href="css/leaflet.css">
-        <link rel="stylesheet" href="css/L.Control.Locate.min.css">
-        <link rel="stylesheet" href="css/qgis2web.css">
-        <link rel="stylesheet" href="css/fontawesome-all.min.css">
-        <link rel="stylesheet" href="css/leaflet-search.css">
-        <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
-        <link rel="stylesheet" href="css/leaflet-measure.css">
-        <style>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" href="css/L.Control.Locate.min.css">
+    <link rel="stylesheet" href="css/qgis2web.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
+    <link rel="stylesheet" href="css/leaflet-measure.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../icon/style.css">
+    <style>
         #map {
-            width: 1364px;
+            width: 1300px;
             height: 817px;
         }
-        body {
-            background-color: #020202;
-        }
-        </style>
-        <title>Mapa de Isoyetas</title>
-    </head>
-    <body>
-        <header>
-            <div class="container-header">
-                <div class="container-logo-title"> <img src="../images/ucvlogo.png" alt="">
-                    <h1><strong>UCV NÚCLEO MARACAY</strong></h1>
-                </div>
-                <h1>
-                    <center>
-                        <span style="color: aquamarine">Mapa de Isoyetas</span>
-                    </center>
-                </h1>
-            </div>
-    
-        </header>
-        <main>
-            <a href="../pages/IndClimEst.html" style="text-decoration:none"><span class="icon-controller-fast-backward">
-                    Regresar</span></a>
-            <div id="map">
-                <div id="popup" class="ol-popup">
-                    <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-                    <div id="popup-content"></div>
-                </div>
-            </div>
+    </style>
+    <title>Mapa de Isoyetas</title>
+</head>
+
+<body bgcolor="#020202">
+    <header>
+        <div id="logo">
+            <!--<p><center><img src="images/ucvlogo.png" width="300" height="247" alt="UCV" /></center></p>	-->
+            <h1>
+                <center>
+                    <span style="color: aquamarine">Mapa de Isoyetas</span>
+                </center>
+            </h1>
+            <h1>
+                <center>
+                    <span style="color: aquamarine">Cuenca Río Guey</span>
+                </center>
+            </h1>
+            <h1>
+                <center>
+                    <span style="color: aquamarine">Maracay</span>
+                </center>
+            </h1>
+        </div>
+    </header>
+    <main>
+        <a href="../pages/IndClimEst.html" style="text-decoration:none"><span class="icon-controller-fast-backward"> Regresar</span></a>
+        <div id="map">
+        </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/L.Control.Locate.min.js"></script>
@@ -61,22 +61,22 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="js/leaflet-search.js"></script>
         <script src="data/Cuenca_1.js"></script>
-        <script src="data/IsoyetasUCV_2.js"></script>
-        <script>
+        <script src="data/IsoyetasRioGuey_2.js"></script>
+    </main>
+    <script>
         var highlightLayer;
         function highlightFeature(e) {
             highlightLayer = e.target;
             highlightLayer.openPopup();
         }
         var map = L.map('map', {
-            zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[10.254344209609584,-67.68525582731029],[10.34061564314369,-67.5193006771042]]);
+            zoomControl: true, maxZoom: 28, minZoom: 1
+        }).fitBounds([[10.253115693419076, -67.70459486419347], [10.358525033335425, -67.50181990517912]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
-        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
-        L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
+        var autolinker = new Autolinker({ truncate: { length: 30, location: 'smart' } });
+        L.control.locate({ locateOptions: { maxZoom: 19 } }).addTo(map);
         var measureControl = new L.Control.Measure({
             position: 'topleft',
             primaryLengthUnit: 'meters',
@@ -86,32 +86,32 @@
         });
         measureControl.addTo(map);
         document.getElementsByClassName('leaflet-control-measure-toggle')[0]
-        .innerHTML = '';
+            .innerHTML = '';
         document.getElementsByClassName('leaflet-control-measure-toggle')[0]
-        .className += ' fas fa-ruler';
+            .className += ' fas fa-ruler';
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        map.createPane('pane_GoogleMaps_0');
-        map.getPane('pane_GoogleMaps_0').style.zIndex = 400;
-        var layer_GoogleMaps_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}', {
-            pane: 'pane_GoogleMaps_0',
-            opacity: 0.55,
+        map.createPane('pane_GoogleSatellite_0');
+        map.getPane('pane_GoogleSatellite_0').style.zIndex = 400;
+        var layer_GoogleSatellite_0 = L.tileLayer('http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleSatellite_0',
+            opacity: 1.0,
             attribution: '',
             minZoom: 1,
             maxZoom: 28,
             minNativeZoom: 0,
             maxNativeZoom: 18
         });
-        layer_GoogleMaps_0;
-        map.addLayer(layer_GoogleMaps_0);
+        layer_GoogleSatellite_0;
+        map.addLayer(layer_GoogleSatellite_0);
         function pop_Cuenca_1(feature, layer) {
             layer.on({
-                mouseout: function(e) {
+                mouseout: function (e) {
                     if (typeof layer.closePopup == 'function') {
                         layer.closePopup();
                     } else {
-                        layer.eachLayer(function(feature){
+                        layer.eachLayer(function (feature) {
                             feature.closePopup()
                         });
                     }
@@ -123,7 +123,7 @@
                         <td colspan="2">' + (feature.properties['Id'] !== null ? autolinker.link(feature.properties['Id'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+            layer.bindPopup(popupContent, { maxHeight: 400 });
         }
 
         function style_Cuenca_1_0() {
@@ -136,7 +136,7 @@
                 lineJoin: 'bevel',
                 weight: 4.0,
                 fillOpacity: 0,
-                interactive: false,
+                interactive: true,
             }
         }
         map.createPane('pane_Cuenca_1');
@@ -144,7 +144,7 @@
         map.getPane('pane_Cuenca_1').style['mix-blend-mode'] = 'normal';
         var layer_Cuenca_1 = new L.geoJson(json_Cuenca_1, {
             attribution: '',
-            interactive: false,
+            interactive: true,
             dataVar: 'json_Cuenca_1',
             layerName: 'layer_Cuenca_1',
             pane: 'pane_Cuenca_1',
@@ -153,13 +153,13 @@
         });
         bounds_group.addLayer(layer_Cuenca_1);
         map.addLayer(layer_Cuenca_1);
-        function pop_IsoyetasUCV_2(feature, layer) {
+        function pop_IsoyetasRioGuey_2(feature, layer) {
             layer.on({
-                mouseout: function(e) {
+                mouseout: function (e) {
                     if (typeof layer.closePopup == 'function') {
                         layer.closePopup();
                     } else {
-                        layer.eachLayer(function(feature){
+                        layer.eachLayer(function (feature) {
                             feature.closePopup()
                         });
                     }
@@ -172,90 +172,36 @@
                         <td>' + (feature.properties['P_anual_mm'] !== null ? autolinker.link(feature.properties['P_anual_mm'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+            layer.bindPopup(popupContent, { maxHeight: 400 });
         }
 
-        function style_IsoyetasUCV_2_0(feature) {
-            if (feature.properties['P_anual_mm'] >= 1000.000000 && feature.properties['P_anual_mm'] <= 1120.000000 ) {
-                return {
-                pane: 'pane_IsoyetasUCV_2',
+        function style_IsoyetasRioGuey_2_0() {
+            return {
+                pane: 'pane_IsoyetasRioGuey_2',
                 opacity: 1,
-                color: 'rgba(43,131,186,1.0)',
+                color: 'rgba(166,206,227,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
                 weight: 1.0,
                 fillOpacity: 0,
                 interactive: true,
-            }
-            }
-            if (feature.properties['P_anual_mm'] >= 1120.000000 && feature.properties['P_anual_mm'] <= 1240.000000 ) {
-                return {
-                pane: 'pane_IsoyetasUCV_2',
-                opacity: 1,
-                color: 'rgba(171,221,164,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-            }
-            if (feature.properties['P_anual_mm'] >= 1240.000000 && feature.properties['P_anual_mm'] <= 1360.000000 ) {
-                return {
-                pane: 'pane_IsoyetasUCV_2',
-                opacity: 1,
-                color: 'rgba(255,255,191,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-            }
-            if (feature.properties['P_anual_mm'] >= 1360.000000 && feature.properties['P_anual_mm'] <= 1480.000000 ) {
-                return {
-                pane: 'pane_IsoyetasUCV_2',
-                opacity: 1,
-                color: 'rgba(253,174,97,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-            }
-            if (feature.properties['P_anual_mm'] >= 1480.000000 && feature.properties['P_anual_mm'] <= 1600.000000 ) {
-                return {
-                pane: 'pane_IsoyetasUCV_2',
-                opacity: 1,
-                color: 'rgba(215,25,28,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
             }
         }
-        map.createPane('pane_IsoyetasUCV_2');
-        map.getPane('pane_IsoyetasUCV_2').style.zIndex = 402;
-        map.getPane('pane_IsoyetasUCV_2').style['mix-blend-mode'] = 'normal';
-        var layer_IsoyetasUCV_2 = new L.geoJson(json_IsoyetasUCV_2, {
+        map.createPane('pane_IsoyetasRioGuey_2');
+        map.getPane('pane_IsoyetasRioGuey_2').style.zIndex = 402;
+        map.getPane('pane_IsoyetasRioGuey_2').style['mix-blend-mode'] = 'normal';
+        var layer_IsoyetasRioGuey_2 = new L.geoJson(json_IsoyetasRioGuey_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_IsoyetasUCV_2',
-            layerName: 'layer_IsoyetasUCV_2',
-            pane: 'pane_IsoyetasUCV_2',
-            onEachFeature: pop_IsoyetasUCV_2,
-            style: style_IsoyetasUCV_2_0,
+            dataVar: 'json_IsoyetasRioGuey_2',
+            layerName: 'layer_IsoyetasRioGuey_2',
+            pane: 'pane_IsoyetasRioGuey_2',
+            onEachFeature: pop_IsoyetasRioGuey_2,
+            style: style_IsoyetasRioGuey_2_0,
         });
-        bounds_group.addLayer(layer_IsoyetasUCV_2);
-        map.addLayer(layer_IsoyetasUCV_2);
+        bounds_group.addLayer(layer_IsoyetasRioGuey_2);
+        map.addLayer(layer_IsoyetasRioGuey_2);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -263,43 +209,37 @@
             title: 'Testing'
         }).addTo(map);
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
-        .className += ' fa fa-search';
+            .className += ' fa fa-search';
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
-        .title += 'Search for a place';
+            .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'IsoyetasUCV<br /><table><tr><td style="text-align: center;"><img src="legend/IsoyetasUCV_2_100011200.png" /></td><td>1000 - 1120</td></tr><tr><td style="text-align: center;"><img src="legend/IsoyetasUCV_2_112012401.png" /></td><td>1120 - 1240</td></tr><tr><td style="text-align: center;"><img src="legend/IsoyetasUCV_2_124013602.png" /></td><td>1240 - 1360</td></tr><tr><td style="text-align: center;"><img src="legend/IsoyetasUCV_2_136014803.png" /></td><td>1360 - 1480</td></tr><tr><td style="text-align: center;"><img src="legend/IsoyetasUCV_2_148016004.png" /></td><td>1480 - 1600</td></tr></table>': layer_IsoyetasUCV_2,'<img src="legend/Cuenca_1.png" /> Cuenca ': layer_Cuenca_1,"Google Maps": layer_GoogleMaps_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps, { '<img src="legend/IsoyetasRioGuey_2.png" /> Isoyetas Rio Guey': layer_IsoyetasRioGuey_2, '<img src="legend/Cuenca_1.png" /> Cuenca ': layer_Cuenca_1, "Google Satellite": layer_GoogleSatellite_0, }, { collapsed: false }).addTo(map);
         setBounds();
         var i = 0;
-        layer_IsoyetasUCV_2.eachLayer(function(layer) {
+        layer_IsoyetasRioGuey_2.eachLayer(function (layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['P_anual_mm'] !== null?String('<div style="color: #0091ca; font-size: 10pt; font-family: \'Cambria\', sans-serif;">' + layer.feature.properties['P_anual_mm']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_IsoyetasUCV_2'});
+            layer.bindTooltip((layer.feature.properties['P_anual_mm'] !== null ? String('<div style="color: #ffffff; font-size: 10pt; font-weight: bold; font-family: \'Cascadia Code SemiBold\', sans-serif;">' + layer.feature.properties['P_anual_mm']) + '</div>' : ''), { permanent: true, offset: [-0, -16], className: 'css_IsoyetasRioGuey_2' });
             labels.push(layer);
             totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
+            layer.added = true;
+            addLabel(layer, i);
+            i++;
         });
-        map.addControl(new L.Control.Search({
-            layer: layer_IsoyetasUCV_2,
-            initial: false,
-            hideMarkerOnCollapse: true,
-            propertyName: 'P_anual_mm'}));
-        document.getElementsByClassName('search-button')[0].className +=
-         ' fa fa-binoculars';
-        resetLabels([layer_IsoyetasUCV_2]);
-        map.on("zoomend", function(){
-            resetLabels([layer_IsoyetasUCV_2]);
+        resetLabels([layer_IsoyetasRioGuey_2]);
+        map.on("zoomend", function () {
+            resetLabels([layer_IsoyetasRioGuey_2]);
         });
-        map.on("layeradd", function(){
-            resetLabels([layer_IsoyetasUCV_2]);
+        map.on("layeradd", function () {
+            resetLabels([layer_IsoyetasRioGuey_2]);
         });
-        map.on("layerremove", function(){
-            resetLabels([layer_IsoyetasUCV_2]);
+        map.on("layerremove", function () {
+            resetLabels([layer_IsoyetasRioGuey_2]);
         });
-        </script>
-        </main>
-    </body>
+    </script>
+
+</body>
+
 </html>
