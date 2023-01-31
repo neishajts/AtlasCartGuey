@@ -39,9 +39,7 @@ header {
   background-color: transparent;
   color: #55A79A;
 }
-.container-menu {
-	
-}
+
 .menu {
   position: relative;
   right: 30px;
@@ -136,7 +134,7 @@ h1 {
 }
 main {
   width: 100%;
-  max-width: 1220px;
+  max-width: 1400px;
   margin: auto;
   position: relative;
   top: 140px;
