@@ -148,7 +148,7 @@ main {
 }
 @media screen and (max-width: 1000px) {
   header {
-    height: 60px;
+    height: 80px;
   }
   .container-logo-title {
     height: 60px;
