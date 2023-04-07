@@ -1,41 +1,41 @@
 var wms_layers = [];
 
 
-        var lyr_GoogleMaps_0 = new ol.layer.Tile({
-            'title': 'Google Maps',
+        var lyr_GoogleSatellite_0 = new ol.layer.Tile({
+            'title': 'Google Satellite',
             'type': 'base',
             'opacity': 1.000000,
             
             
             source: new ol.source.XYZ({
     attributions: ' ',
-                url: 'https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}'
+                url: 'http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}'
             })
         });
-var lyr_PrecipitacionInterpoladaRoGuey_1 = new ol.layer.Image({
+var lyr_PendientesRioGueyMDE30m_1 = new ol.layer.Image({
+                            opacity: 1,
+                            title: "Pendientes Rio Guey MDE 30 m",
+                            
+                            
+                            source: new ol.source.ImageStatic({
+                               url: "./layers/PendientesRioGueyMDE30m_1.png",
+    attributions: ' ',
+                                projection: 'EPSG:3857',
+                                alwaysInRange: true,
+                                imageExtent: [-7534428.325225, 1140650.566908, -7517168.547724, 1160139.057389]
+                            })
+                        });
+var lyr_PrecipitacionInterpoladaRoGuey_2 = new ol.layer.Image({
                             opacity: 1,
                             title: "Precipitacion Interpolada Río Guey",
                             
                             
                             source: new ol.source.ImageStatic({
-                               url: "./layers/PrecipitacionInterpoladaRoGuey_1.png",
+                               url: "./layers/PrecipitacionInterpoladaRoGuey_2.png",
     attributions: ' ',
                                 projection: 'EPSG:3857',
                                 alwaysInRange: true,
                                 imageExtent: [-7527166.406422, 1147920.156363, -7523737.724170, 1157148.699449]
-                            })
-                        });
-var lyr_MDERioGueyamplio30mSombras_2 = new ol.layer.Image({
-                            opacity: 1,
-                            title: "MDE Rio Guey amplio 30m Sombras",
-                            
-                            
-                            source: new ol.source.ImageStatic({
-                               url: "./layers/MDERioGueyamplio30mSombras_2.png",
-    attributions: ' ',
-                                projection: 'EPSG:3857',
-                                alwaysInRange: true,
-                                imageExtent: [-7534428.325225, 1140650.566908, -7517168.547724, 1160139.057389]
                             })
                         });
 var format_poligono_cuenca_3 = new ol.format.GeoJSON();
@@ -67,13 +67,13 @@ var lyr_IsoyetasRioGuey_4 = new ol.layer.Vector({
                 title: '<img src="styles/legend/IsoyetasRioGuey_4.png" /> Isoyetas Rio Guey'
             });
 
-lyr_GoogleMaps_0.setVisible(true);lyr_PrecipitacionInterpoladaRoGuey_1.setVisible(true);lyr_MDERioGueyamplio30mSombras_2.setVisible(true);lyr_poligono_cuenca_3.setVisible(true);lyr_IsoyetasRioGuey_4.setVisible(true);
-var layersList = [lyr_GoogleMaps_0,lyr_PrecipitacionInterpoladaRoGuey_1,lyr_MDERioGueyamplio30mSombras_2,lyr_poligono_cuenca_3,lyr_IsoyetasRioGuey_4];
+lyr_GoogleSatellite_0.setVisible(true);lyr_PendientesRioGueyMDE30m_1.setVisible(true);lyr_PrecipitacionInterpoladaRoGuey_2.setVisible(true);lyr_poligono_cuenca_3.setVisible(true);lyr_IsoyetasRioGuey_4.setVisible(true);
+var layersList = [lyr_GoogleSatellite_0,lyr_PendientesRioGueyMDE30m_1,lyr_PrecipitacionInterpoladaRoGuey_2,lyr_poligono_cuenca_3,lyr_IsoyetasRioGuey_4];
 lyr_poligono_cuenca_3.set('fieldAliases', {'Id': 'Id', });
 lyr_IsoyetasRioGuey_4.set('fieldAliases', {'P_anual_mm': 'P_anual_mm', });
-lyr_poligono_cuenca_3.set('fieldImages', {'Id': 'Range', });
+lyr_poligono_cuenca_3.set('fieldImages', {'Id': 'Hidden', });
 lyr_IsoyetasRioGuey_4.set('fieldImages', {'P_anual_mm': 'TextEdit', });
-lyr_poligono_cuenca_3.set('fieldLabels', {'Id': 'no label', });
+lyr_poligono_cuenca_3.set('fieldLabels', {});
 lyr_IsoyetasRioGuey_4.set('fieldLabels', {'P_anual_mm': 'inline label', });
 lyr_IsoyetasRioGuey_4.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
