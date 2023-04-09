@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" href="css/L.Control.Locate.min.css">
+    <link rel="stylesheet" href="css/qgis2web.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../icon/style.css">
+    <style>
+        #map {
+            width: 1400px;
+            height: 817px;
+        }
+        html,
+        body {
+            background-color: #050505;
+        }
+    </style>
+    <title>Hidrografía Cuenca Río Guey</title>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <h1>
+                <span>Mapa de Hidrografía - Cuenca Río Guey Maracay</span>
+            </h1>
+        </div>
+    </header>
+    <main>
+        <a href="../index.html" style="text-decoration:none"><span class="icon-home">
+                Regresar</span></a>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/L.Control.Locate.min.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/poligono_cuenca_1.js"></script>
+        <script src="data/Hidrografa_2.js"></script>
+        <script>
+            var map = L.map('map', {
+                zoomControl: true, maxZoom: 28, minZoom: 1
+            }).fitBounds([[10.254346865114082, -67.68467286269438], [10.340613263323391, -67.51988375624201]]);
+            var hash = new L.Hash(map);
+            map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+            var autolinker = new Autolinker({ truncate: { length: 30, location: 'smart' } });
+            L.control.locate({ locateOptions: { maxZoom: 19 } }).addTo(map);
+            var bounds_group = new L.featureGroup([]);
+            function setBounds() {
+            }
+            map.createPane('pane_GoogleSatellite_0');
+            map.getPane('pane_GoogleSatellite_0').style.zIndex = 400;
+            var layer_GoogleSatellite_0 = L.tileLayer('http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}', {
+                pane: 'pane_GoogleSatellite_0',
+                opacity: 1.0,
+                attribution: '',
+                minZoom: 1,
+                maxZoom: 28,
+                minNativeZoom: 0,
+                maxNativeZoom: 18
+            });
+            layer_GoogleSatellite_0;
+            map.addLayer(layer_GoogleSatellite_0);
+            function pop_poligono_cuenca_1(feature, layer) {
+            }
+
+            function style_poligono_cuenca_1_0() {
+                return {
+                    pane: 'pane_poligono_cuenca_1',
+                    opacity: 1,
+                    color: 'rgba(228,26,28,1.0)',
+                    dashArray: '',
+                    lineCap: 'square',
+                    lineJoin: 'bevel',
+                    weight: 4.0,
+                    fillOpacity: 0,
+                    interactive: true,
+                }
+            }
+            map.createPane('pane_poligono_cuenca_1');
+            map.getPane('pane_poligono_cuenca_1').style.zIndex = 401;
+            map.getPane('pane_poligono_cuenca_1').style['mix-blend-mode'] = 'normal';
+            var layer_poligono_cuenca_1 = new L.geoJson(json_poligono_cuenca_1, {
+                attribution: '',
+                interactive: true,
+                dataVar: 'json_poligono_cuenca_1',
+                layerName: 'layer_poligono_cuenca_1',
+                pane: 'pane_poligono_cuenca_1',
+                onEachFeature: pop_poligono_cuenca_1,
+                style: style_poligono_cuenca_1_0,
+            });
+            bounds_group.addLayer(layer_poligono_cuenca_1);
+            map.addLayer(layer_poligono_cuenca_1);
+            function pop_Hidrografa_2(feature, layer) {
+                var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">TIPO</th>\
+                        <td>' + (feature.properties['TIPO'] !== null ? autolinker.link(feature.properties['TIPO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+                layer.bindPopup(popupContent, { maxHeight: 400 });
+            }
+
+            function style_Hidrografa_2_0(feature) {
+                switch (String(feature.properties['TIPO'])) {
+                    case 'Cuenca Rio Guey':
+                        return {
+                            pane: 'pane_Hidrografa_2',
+                            opacity: 1,
+                            color: 'rgba(74,102,196,1.0)',
+                            dashArray: '',
+                            lineCap: 'square',
+                            lineJoin: 'bevel',
+                            weight: 3.0,
+                            fillOpacity: 0,
+                            interactive: true,
+                        }
+                        break;
+                    case 'Quebrada':
+                        return {
+                            pane: 'pane_Hidrografa_2',
+                            opacity: 1,
+                            color: 'rgba(11,155,227,1.0)',
+                            dashArray: '1,5',
+                            lineCap: 'square',
+                            lineJoin: 'bevel',
+                            weight: 2.0,
+                            fillOpacity: 0,
+                            interactive: true,
+                        }
+                        break;
+                }
+            }
+            map.createPane('pane_Hidrografa_2');
+            map.getPane('pane_Hidrografa_2').style.zIndex = 402;
+            map.getPane('pane_Hidrografa_2').style['mix-blend-mode'] = 'normal';
+            var layer_Hidrografa_2 = new L.geoJson(json_Hidrografa_2, {
+                attribution: '',
+                interactive: true,
+                dataVar: 'json_Hidrografa_2',
+                layerName: 'layer_Hidrografa_2',
+                pane: 'pane_Hidrografa_2',
+                onEachFeature: pop_Hidrografa_2,
+                style: style_Hidrografa_2_0,
+            });
+            bounds_group.addLayer(layer_Hidrografa_2);
+            map.addLayer(layer_Hidrografa_2);
+            var baseMaps = {};
+            L.control.layers(baseMaps, { 'Hidrografía<br /><table><tr><td style="text-align: center;"><img src="legend/Hidrografa_2_CuencaRioGuey0.png" /></td><td>Cuenca Rio Guey</td></tr><tr><td style="text-align: center;"><img src="legend/Hidrografa_2_Quebrada1.png" /></td><td>Quebrada</td></tr></table>': layer_Hidrografa_2, '<img src="legend/poligono_cuenca_1.png" /> poligono_cuenca': layer_poligono_cuenca_1, "Google Satellite": layer_GoogleSatellite_0, }, { collapsed: false }).addTo(map);
+            setBounds();
+        </script>
+        <p><b>Fuente:</b> Elaboración Propia (2023)</p>
+        <br>
+        <br>
+    </main>
+</body>
+
+</html>
