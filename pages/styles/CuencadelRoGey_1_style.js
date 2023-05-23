@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_PoligonoCuencaUCV_1 = function(feature, resolution){
+var style_CuencadelRoGey_1 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
