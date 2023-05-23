@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_poligono_cuenca_1 = function(feature, resolution){
+var style_CuencaRioGuey_1 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -9,10 +9,10 @@ var style_poligono_cuenca_1 = function(feature, resolution){
     var value = ""
     var labelText = "";
     size = 0;
-    var labelFont = "10px, sans-serif";
-    var labelFill = "#000000";
-    var bufferColor = "";
-    var bufferWidth = 0;
+    var labelFont = "13.0px \'Arial\', sans-serif";
+    var labelFill = "#fdbf6f";
+    var bufferColor = "#fafafa";
+    var bufferWidth = 1.0;
     var textAlign = "left";
     var offsetX = 8;
     var offsetY = 3;

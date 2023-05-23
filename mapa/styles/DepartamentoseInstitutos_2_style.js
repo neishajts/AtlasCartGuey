@@ -1,18 +1,18 @@
 var size = 0;
 var placement = 'point';
-function categories_DepartamentosFAgroUCV_2(feature, value, size, resolution, labelText,
+function categories_DepartamentoseInstitutos_2(feature, value, size, resolution, labelText,
                        labelFont, labelFill, bufferColor, bufferWidth,
                        placement) {
-                switch(value.toString()) {case 'Inst. Agronomía':
+                switch(value.toString()) {case 'Departamento de Química':
                     return [ new ol.style.Style({
         image: new ol.style.Circle({radius: 4.0 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(156,91,182,1.0)'})}),
+            stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(166,206,227,1.0)'})}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
     })];
                     break;
-case 'Inst. Botánica Agrícola':
+case 'Departamento e Instituto de Agronomía':
                     return [ new ol.style.Style({
         image: new ol.style.Circle({radius: 4.0 + size,
             stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(70,98,216,1.0)'})}),
@@ -21,7 +21,7 @@ case 'Inst. Botánica Agrícola':
                               bufferWidth)
     })];
                     break;
-case 'Inst. Economía Agrícola':
+case 'Departamento e Instituto de Botánica':
                     return [ new ol.style.Style({
         image: new ol.style.Circle({radius: 4.0 + size,
             stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(53,171,248,1.0)'})}),
@@ -30,7 +30,7 @@ case 'Inst. Economía Agrícola':
                               bufferWidth)
     })];
                     break;
-case 'Inst. Edafología':
+case 'Departamento e Instituto de Economía':
                     return [ new ol.style.Style({
         image: new ol.style.Circle({radius: 4.0 + size,
             stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(27,229,181,1.0)'})}),
@@ -39,7 +39,7 @@ case 'Inst. Edafología':
                               bufferWidth)
     })];
                     break;
-case 'Inst. Genética Agrícola':
+case 'Departamento e Instituto de Edafología':
                     return [ new ol.style.Style({
         image: new ol.style.Circle({radius: 4.0 + size,
             stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(116,254,93,1.0)'})}),
@@ -48,16 +48,16 @@ case 'Inst. Genética Agrícola':
                               bufferWidth)
     })];
                     break;
-case 'Inst. Ingeniería Agrícola':
+case 'Departamento e Instituto de Genética':
                     return [ new ol.style.Style({
         image: new ol.style.Circle({radius: 4.0 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(201,239,52,1.0)'})}),
+            stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(193,235,137,1.0)'})}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
     })];
                     break;
-case 'Inst. Producción Animal':
+case 'Departamento e Instituto de Ingeniería Agrícola':
                     return [ new ol.style.Style({
         image: new ol.style.Circle({radius: 4.0 + size,
             stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(251,185,56,1.0)'})}),
@@ -66,7 +66,7 @@ case 'Inst. Producción Animal':
                               bufferWidth)
     })];
                     break;
-case 'Inst. Química y Tecnología':
+case 'Departamento e Instituto de Zoología Agrícola':
                     return [ new ol.style.Style({
         image: new ol.style.Circle({radius: 4.0 + size,
             stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(245,105,24,1.0)'})}),
@@ -75,37 +75,37 @@ case 'Inst. Química y Tecnología':
                               bufferWidth)
     })];
                     break;
-case 'Inst. Zoología Agrícola':
+case 'Instituto de Química':
                     return [ new ol.style.Style({
         image: new ol.style.Circle({radius: 4.0 + size,
-            stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(201,41,3,1.0)'})}),
+            stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}), fill: new ol.style.Fill({color: 'rgba(250,252,222,1.0)'})}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
     })];
                     break;}};
 
-var style_DepartamentosFAgroUCV_2 = function(feature, resolution){
+var style_DepartamentoseInstitutos_2 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
     };
-    var value = feature.get("nombre_dep");
+    var value = feature.get("Nombre");
     var labelText = "";
     size = 0;
-    var labelFont = "10px, sans-serif";
-    var labelFill = "#000000";
+    var labelFont = "15.600000000000001px \'Arial\', sans-serif";
+    var labelFill = "#ffffff";
     var bufferColor = "";
     var bufferWidth = 0;
     var textAlign = "left";
     var offsetX = 8;
     var offsetY = 3;
     var placement = 'point';
-    if ("" !== null) {
-        labelText = String("");
+    if (feature.get("Numero") !== null) {
+        labelText = String(feature.get("Numero"));
     }
     
-var style = categories_DepartamentosFAgroUCV_2(feature, value, size, resolution, labelText,
+var style = categories_DepartamentoseInstitutos_2(feature, value, size, resolution, labelText,
                           labelFont, labelFill, bufferColor,
                           bufferWidth, placement);
 

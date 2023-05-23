@@ -12,52 +12,52 @@ var wms_layers = [];
                 url: 'http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}'
             })
         });
-var format_poligono_cuenca_1 = new ol.format.GeoJSON();
-var features_poligono_cuenca_1 = format_poligono_cuenca_1.readFeatures(json_poligono_cuenca_1, 
+var format_CuencaRioGuey_1 = new ol.format.GeoJSON();
+var features_CuencaRioGuey_1 = format_CuencaRioGuey_1.readFeatures(json_CuencaRioGuey_1, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_poligono_cuenca_1 = new ol.source.Vector({
+var jsonSource_CuencaRioGuey_1 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_poligono_cuenca_1.addFeatures(features_poligono_cuenca_1);
-var lyr_poligono_cuenca_1 = new ol.layer.Vector({
+jsonSource_CuencaRioGuey_1.addFeatures(features_CuencaRioGuey_1);
+var lyr_CuencaRioGuey_1 = new ol.layer.Vector({
                 declutter: true,
-                source:jsonSource_poligono_cuenca_1, 
-                style: style_poligono_cuenca_1,
-                interactive: false,
-                title: '<img src="styles/legend/poligono_cuenca_1.png" /> poligono_cuenca'
-            });
-var format_DepartamentosFAgroUCV_2 = new ol.format.GeoJSON();
-var features_DepartamentosFAgroUCV_2 = format_DepartamentosFAgroUCV_2.readFeatures(json_DepartamentosFAgroUCV_2, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_DepartamentosFAgroUCV_2 = new ol.source.Vector({
-    attributions: ' ',
-});
-jsonSource_DepartamentosFAgroUCV_2.addFeatures(features_DepartamentosFAgroUCV_2);
-var lyr_DepartamentosFAgroUCV_2 = new ol.layer.Vector({
-                declutter: true,
-                source:jsonSource_DepartamentosFAgroUCV_2, 
-                style: style_DepartamentosFAgroUCV_2,
+                source:jsonSource_CuencaRioGuey_1, 
+                style: style_CuencaRioGuey_1,
                 interactive: true,
-    title: 'Departamentos FAgro UCV<br />\
-    <img src="styles/legend/DepartamentosFAgroUCV_2_0.png" /> Inst. Agronomía<br />\
-    <img src="styles/legend/DepartamentosFAgroUCV_2_1.png" /> Inst. Botánica Agrícola<br />\
-    <img src="styles/legend/DepartamentosFAgroUCV_2_2.png" /> Inst. Economía Agrícola<br />\
-    <img src="styles/legend/DepartamentosFAgroUCV_2_3.png" /> Inst. Edafología<br />\
-    <img src="styles/legend/DepartamentosFAgroUCV_2_4.png" /> Inst. Genética Agrícola<br />\
-    <img src="styles/legend/DepartamentosFAgroUCV_2_5.png" /> Inst. Ingeniería Agrícola<br />\
-    <img src="styles/legend/DepartamentosFAgroUCV_2_6.png" /> Inst. Producción Animal<br />\
-    <img src="styles/legend/DepartamentosFAgroUCV_2_7.png" /> Inst. Química y Tecnología<br />\
-    <img src="styles/legend/DepartamentosFAgroUCV_2_8.png" /> Inst. Zoología Agrícola<br />'
+                title: '<img src="styles/legend/CuencaRioGuey_1.png" /> Cuenca Rio Guey'
+            });
+var format_DepartamentoseInstitutos_2 = new ol.format.GeoJSON();
+var features_DepartamentoseInstitutos_2 = format_DepartamentoseInstitutos_2.readFeatures(json_DepartamentoseInstitutos_2, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_DepartamentoseInstitutos_2 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_DepartamentoseInstitutos_2.addFeatures(features_DepartamentoseInstitutos_2);
+var lyr_DepartamentoseInstitutos_2 = new ol.layer.Vector({
+                declutter: true,
+                source:jsonSource_DepartamentoseInstitutos_2, 
+                style: style_DepartamentoseInstitutos_2,
+                interactive: true,
+    title: 'Departamentos e Institutos<br />\
+    <img src="styles/legend/DepartamentoseInstitutos_2_0.png" /> Departamento de Química<br />\
+    <img src="styles/legend/DepartamentoseInstitutos_2_1.png" /> Departamento e Instituto de Agronomía<br />\
+    <img src="styles/legend/DepartamentoseInstitutos_2_2.png" /> Departamento e Instituto de Botánica<br />\
+    <img src="styles/legend/DepartamentoseInstitutos_2_3.png" /> Departamento e Instituto de Economía<br />\
+    <img src="styles/legend/DepartamentoseInstitutos_2_4.png" /> Departamento e Instituto de Edafología<br />\
+    <img src="styles/legend/DepartamentoseInstitutos_2_5.png" /> Departamento e Instituto de Genética<br />\
+    <img src="styles/legend/DepartamentoseInstitutos_2_6.png" /> Departamento e Instituto de Ingeniería Agrícola<br />\
+    <img src="styles/legend/DepartamentoseInstitutos_2_7.png" /> Departamento e Instituto de Zoología Agrícola<br />\
+    <img src="styles/legend/DepartamentoseInstitutos_2_8.png" /> Instituto de Química<br />'
         });
 
-lyr_GoogleSatellite_0.setVisible(true);lyr_poligono_cuenca_1.setVisible(true);lyr_DepartamentosFAgroUCV_2.setVisible(true);
-var layersList = [lyr_GoogleSatellite_0,lyr_poligono_cuenca_1,lyr_DepartamentosFAgroUCV_2];
-lyr_poligono_cuenca_1.set('fieldAliases', {'Id': 'Id', });
-lyr_DepartamentosFAgroUCV_2.set('fieldAliases', {'id': 'id', 'cod': 'Codigo', 'nombre_dep': 'Nombre Departamento', });
-lyr_poligono_cuenca_1.set('fieldImages', {'Id': 'Range', });
-lyr_DepartamentosFAgroUCV_2.set('fieldImages', {'id': 'Hidden', 'cod': 'Hidden', 'nombre_dep': 'TextEdit', });
-lyr_poligono_cuenca_1.set('fieldLabels', {'Id': 'no label', });
-lyr_DepartamentosFAgroUCV_2.set('fieldLabels', {'nombre_dep': 'inline label', });
-lyr_DepartamentosFAgroUCV_2.on('precompose', function(evt) {
+lyr_GoogleSatellite_0.setVisible(true);lyr_CuencaRioGuey_1.setVisible(true);lyr_DepartamentoseInstitutos_2.setVisible(true);
+var layersList = [lyr_GoogleSatellite_0,lyr_CuencaRioGuey_1,lyr_DepartamentoseInstitutos_2];
+lyr_CuencaRioGuey_1.set('fieldAliases', {'Id': 'Id', 'Area': 'Area', });
+lyr_DepartamentoseInstitutos_2.set('fieldAliases', {'photo': 'Foto', 'filename': 'filename', 'directory': 'directory', 'altitude': 'altitude', 'direction': 'direction', 'rotation': 'rotation', 'longitude': 'Longitud', 'latitude': 'Latitud', 'timestamp': 'timestamp', 'Nombre': 'Nombre', 'Numero': 'Nro', });
+lyr_CuencaRioGuey_1.set('fieldImages', {'Id': 'Range', 'Area': 'TextEdit', });
+lyr_DepartamentoseInstitutos_2.set('fieldImages', {'photo': 'ExternalResource', 'filename': 'Hidden', 'directory': 'Hidden', 'altitude': 'TextEdit', 'direction': 'Hidden', 'rotation': 'Hidden', 'longitude': 'TextEdit', 'latitude': 'TextEdit', 'timestamp': 'Hidden', 'Nombre': 'TextEdit', 'Numero': 'TextEdit', });
+lyr_CuencaRioGuey_1.set('fieldLabels', {'Id': 'no label', 'Area': 'no label', });
+lyr_DepartamentoseInstitutos_2.set('fieldLabels', {'photo': 'inline label', 'altitude': 'inline label', 'longitude': 'inline label', 'latitude': 'inline label', 'Nombre': 'inline label', 'Numero': 'inline label', });
+lyr_DepartamentoseInstitutos_2.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
