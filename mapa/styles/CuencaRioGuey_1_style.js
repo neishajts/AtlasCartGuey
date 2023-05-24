@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_EstacionesHidroClimaticas_2 = function(feature, resolution){
+var style_CuencaRioGuey_1 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -10,19 +10,18 @@ var style_EstacionesHidroClimaticas_2 = function(feature, resolution){
     var labelText = "";
     size = 0;
     var labelFont = "13.0px \'Arial\', sans-serif";
-    var labelFill = "#ffffff";
-    var bufferColor = "";
-    var bufferWidth = 0;
+    var labelFill = "#fdbf6f";
+    var bufferColor = "#fafafa";
+    var bufferWidth = 1.0;
     var textAlign = "left";
     var offsetX = 8;
     var offsetY = 3;
     var placement = 'point';
-    if (feature.get("Nombre") !== null) {
-        labelText = String(feature.get("Nombre"));
+    if ("" !== null) {
+        labelText = String("");
     }
     var style = [ new ol.style.Style({
-        image: new ol.style.RegularShape({radius: 8.8 + size, points: 4,
-            stroke: new ol.style.Stroke({color: 'rgba(50,87,128,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1}), fill: new ol.style.Fill({color: 'rgba(72,123,182,1.0)'})}),
+        stroke: new ol.style.Stroke({color: 'rgba(77,175,74,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)

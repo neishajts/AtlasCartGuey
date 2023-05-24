@@ -23,7 +23,7 @@ var lyr_CuencadelRoGey_1 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_CuencadelRoGey_1, 
                 style: style_CuencadelRoGey_1,
-                interactive: false,
+                interactive: true,
                 title: '<img src="styles/legend/CuencadelRoGey_1.png" /> Cuenca del Río Güey'
             });
 var format_EstacionesHidroClimaticas_2 = new ol.format.GeoJSON();
@@ -38,12 +38,8 @@ var lyr_EstacionesHidroClimaticas_2 = new ol.layer.Vector({
                 source:jsonSource_EstacionesHidroClimaticas_2, 
                 style: style_EstacionesHidroClimaticas_2,
                 interactive: true,
-    title: 'Estaciones HidroClimaticas<br />\
-    <img src="styles/legend/EstacionesHidroClimaticas_2_0.png" /> Castaño - Cabecera<br />\
-    <img src="styles/legend/EstacionesHidroClimaticas_2_1.png" /> Maracay - Agronomía<br />\
-    <img src="styles/legend/EstacionesHidroClimaticas_2_2.png" /> Maracay - La Trinidad<br />\
-    <img src="styles/legend/EstacionesHidroClimaticas_2_3.png" /> Maracay-CENIAP<br />'
-        });
+                title: '<img src="styles/legend/EstacionesHidroClimaticas_2.png" /> Estaciones HidroClimaticas'
+            });
 
 lyr_GoogleSatellite_0.setVisible(true);lyr_CuencadelRoGey_1.setVisible(true);lyr_EstacionesHidroClimaticas_2.setVisible(true);
 var layersList = [lyr_GoogleSatellite_0,lyr_CuencadelRoGey_1,lyr_EstacionesHidroClimaticas_2];

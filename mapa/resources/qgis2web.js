@@ -110,7 +110,7 @@ layerSwitcher.hidePanel = function() {};
 layerSwitcher.showPanel();
 
 
-map.getView().fit([-7536998.101793, 1147319.356616, -7514174.508665, 1159772.915390], map.getSize());
+map.getView().fit([-7534393.234290, 1147652.940566, -7516509.206929, 1157411.264010], map.getSize());
 
 var NO_POPUP = 0
 var ALL_FIELDS = 1
@@ -150,8 +150,8 @@ var featureOverlay = new ol.layer.Vector({
     updateWhileInteracting: true // optional, for instant visual feedback
 });
 
-var doHighlight = true;
-var doHover = true;
+var doHighlight = false;
+var doHover = false;
 
 var highlight;
 var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -674,6 +674,17 @@ var geolocateOverlay = new ol.layer.Vector({
 
 geolocation.setTracking(true);
 
+
+var geocoder = new Geocoder('nominatim', {
+  provider: 'osm',
+  lang: 'en-US',
+  placeholder: 'Search for ...',
+  limit: 5,
+  keepOpen: true
+});
+map.addControl(geocoder);
+
+document.getElementsByClassName('gcd-gl-btn')[0].className += ' fa fa-search';
 
 var attributionComplete = false;
 map.on("rendercomplete", function(evt) {
