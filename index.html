@@ -1,140 +1,223 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="es">
+<!DOCTYPE HTML>
+<html lang="es">
 
 <head>
-    <title>Atlas Indicadores Río Guey</title>
-
- <!--    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="./images/favicon_io/site.webmanifest">  -->
-    <link rel="icon" href="./images/favicon_io/favicon.ico">
-    <script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery.gallerax-0.2.js"></script>
-    <script type="text/javascript" src="js/filter.js"></script>
-    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="css/animate/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-
+  <title>Atlas Rio Guey</title>
+  <meta name="description" content="website description">
+  <meta name="keywords" content="website keywords, website keywords">
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <link rel="stylesheet" type="text/css" id="theme" href="./css/style.css">
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="./js/modernizr-1.5.min.js"></script>
 </head>
 
 <body>
-
-    <div id="wrapper">
-        <p>
-            <center><img src="./images/ucvlogo.png" width="120" height="100" alt="UCV" /></center>
-        </p>
-        <div id="logo">
-            <h1>Sistema de Información Ambiental<span> | Cuenca Río Guey</span></h1>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="./index.html">Atlas de Indicadores Ambientales | <span class="logo_colour">Cuenca Rio
+                Guey</span></a></h1>
+          <h2>UCV Campus Maracay</h2>
         </div>
-
-        <div id="categories">
+        <form method="post" action="#" id="search">
+          <input class="search" type="text" name="search_field" value="search....."
+            onclick="javascript: document.forms['search'].search_field.value=''"><input name="search" type="image"
+            style="float: right;border: 0; margin: 20px 0 0 0;" src="./images/search.png" alt="search" title="search">
+        </form>
+      </div>
+      <nav>
+        <ul class="sf-menu" id="nav">
+          <li class="current"><a href="index.html">Inicio</a></li>
+          <li><a href="./mapa/mapa.html">Localizacion y Delimitacion</a></li>
+          <li>
+            <a href="#">Clima</a>
             <ul>
-                <li><a href="#" Class="current">Inicio</a></i>
-                <li><a href="./mapa/mapa.html">Localización y Delimitación</a></i>
-                <li><a href="./pages/IndClimEst.html">Clima</a></li>
-                <li><a href="./pages/IndSuelos.html">Suelo</a></li>
-                <li><a href="./MVegetacion/Mapa_Vegetacion.html">Vegetación</a></li>
-                <li><a href="./Pendiente/Pendiente.html">Relieve</a></li>
-                <li><a href="./Hidrografia/Hidrografia.html">Hidrografía</a></li>
-                <li><a href="./abrae/Abrae.html">Abrae</a></li>
-
-
-            </ul>
-        </div>
-
-        <div id="gallery">
-
-
-
-            <div id="output">
-                <img src="./images/1.jpg" alt="" />
-            </div>
-
-            <div id="captions">
-
-                <div id="nav">
+              <li><a href="#">Estacion Maracay CENIAP</a>
+                <ul>
+                  <li><a href="#">Precipitacion - ETO</a>
                     <ul>
-                        <li><a href="#" class="navFirst">[ &lt;&lt; ]</a></li>
-                        <li><a href="#" class="navPrevious">[ &lt; ]</a></li>
-                        <li><a href="#" class="navNext">[ &gt; ]</a></li>
-                        <li><a href="#" class="navLast">[ &gt;&gt; ]</a></li>
-                        <li><a href="#" class="navStopAdvance">[ Stop ]</a></li>
-                        <li><a href="#" class="navPlayAdvance active">[ Play ]</a></li>
+                      <li><a href="#">Totales Mensuales</a></li>
+                      <li><a href="#">Promedios Mensuales</a></li>
+                      <li><a href="#">Totales Anuales</a></li>
                     </ul>
-                </div>
+                  </li>
+                  <li><a href="#">Temperatura TM - tm</a>
+                    <ul>
+                      <li><a href="#">Promedios Mensuales</a></li>
+                      <li><a href="#">Promedios Anuales</a></li>
+                      <li><a href="#">Temperatura Media Anual</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Radiacion</a>
+                    <ul>
+                      <li><a href="#">Promedios Mensuales</a></li>
+                      <li><a href="#">Promedios Anuales</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Humedad</a>
+                    <ul>
+                      <li><a href="#">Totales Mensuales</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#">Estacion Maracay FAgro</a>
+                <ul>
+                  <li><a href="#">Precipitacion</a>
+                    <ul>
+                      <li><a href="#">Promedios Mensuales</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Temperatura TM - tm</a>
+                    <ul>
+                      <li><a href="#">Promedios Mensuales</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Humedad</a>
+                    <ul>
+                      <li><a href="#">Promedios Mensuales</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#">Estación La Trinidad</a>
+                <ul>
+                  <li><a href="#">Precipitacion</a>
+                    <ul>
+                      <li><a href="#">Promedios Mensuales</a></li>
+                      <li><a href="#">Promedios Anuales</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#">Estación Castano Cabecera</a>
+                <ul>
+                  <li><a href="#">Precipitacion</a>
+                    <ul>
+                      <li><a href="#">Promedios Anuales</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
 
-                <span class="line">Límites UCV Maracay</span>
-
-                <br class="clear" />
-
-                <span class="line2">Límites geográficos de la UCV Maracay</span>
-
-
-            </div>
-
-            <ul class="thumbnails category1">
-                <li class="first"><img src="./images/1_thumb.jpg"
-                        title="Límites Cuenca Río Guey Maracay ; Límites geográficos de la Cuenca del Río Guey Maracay"
-                        alt="" width="100" height="75" /></li>
-                <li><img src="./images/2_thumb.jpg"
-                        title="Clima ; Estación climática de la Facultad de Agronomía Campus Maracay" alt="" width="100"
-                        height="75" /></li>
-                <li><img src="./images/3_thumb.jpg" title="Suelo ; Foto Campo Experimental FAgro Maracay" alt=""
-                        width="100" height="75" /></li>
-                <li><img src="./images/4_thumb.jpg"
-                        title="Vegetación ; Cultivos de Pimentón en el Instituto de Agronomía FAgro Maracay" alt=""
-                        width="100" height="75" /></li>
-                <li><img src="./images/5_thumb.jpg" title="Relieve ; Vista Panorámica del Limón Maracay" alt=""
-                        width="100" height="75" /></li>
-                <li><img src="./images/6_thumb.jpg"
-                        title="Hidrografía ; Fotografía de Pozo del Diablo, en FAgro Maracay" alt="" width="100"
-                        height="75" /></li>
             </ul>
+          </li>
+          <li><a href="page.html">Incendios</a></li>
+          <li><a href="another_page.html">Suelo</a></li>
+          <li><a href="contact.php">Relieve</a></li>
+          <li><a href="contact.php">Vegetacion</a></li>
+          <li><a href="#">Otros Elementos</a>
+            <ul>
+              <li><a href="#">Mapas</a>
+                <ul>
+                  <li><a href="#">Isoyetas</a></li>
+                  <li><a href="#">Precipitación Interpolada</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Galeria</a>
+                <ul>
+                  <li><a href="#">Estaciones Climatologicas</a>
+                    <ul>
+                      <li><a href="#">FAgro</a></li>
+                      <li><a href="#">Maracay CENIAP</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
 
-            <br class="clear" />
-
-            <script type="text/javascript">
-                $.gallerax({
-                    outputSelector: '#output img', // Output selector
-                    thumbnailsSelector: '.thumbnails li img', // Thumbnails selector
-                    captionSelector: '#captions .line', // Caption selector
-                    captionLines: 2, // Caption lines (3 lines)
-                    fade: 'fast', // Transition speed (fast)
-                    navNextSelector: '#nav a.navNext', // 'Next' selector
-                    navPreviousSelector: '#nav a.navPrevious', // 'Previous' selector
-                    navFirstSelector: '#nav a.navFirst', // 'First' selector
-                    navLastSelector: '#nav a.navLast', // 'Last' selector
-                    navStopAdvanceSelector: '#nav a.navStopAdvance', // 'Stop Advance' selector
-                    navPlayAdvanceSelector: '#nav a.navPlayAdvance', // 'Play Advance' selector
-                    advanceFade: 'slow', // Advance transition speed (slow)
-                    advanceDelay: 4000, // Advance delay (4 seconds)
-                    advanceResume: 12000, // Advance resume (12 seconds)
-                    thumbnailsFunction: function (s) { // Thumbnails function
-
-                        return s.replace(/_thumb\.jpg$/, '.jpg');
-
-                    }
-                });
-            </script>
-
-            <!-- end -->
-
-
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div id="site_content">
+      <div id="sidebar_container">
+        <div class="sidebar">
+          <h3>Latest News</h3>
+          <div class="sidebar_item">
+            <!-- insert your sidebar items here -->
+            <h4>New Website Launched</h4>
+            <h5>January 1st, 2012</h5>
+            <p>2012 sees the redesign of our website. Take a look around and let us know what you think.<br><a
+                href="#">Read more</a></p>
+          </div>
+          <div class="sidebar_base"></div>
         </div>
-
-        <div id="footer">
-            <p>
-                Fotos tomadas en la UCV Campus Maracay.
-            </p>
+        <div class="sidebar">
+          <h3>Useful Links</h3>
+          <div class="sidebar_item">
+            <ul>
+              <li><a href="#">link 1</a></li>
+              <li><a href="#">link 2</a></li>
+              <li><a href="#">link 3</a></li>
+              <li><a href="#">link 4</a></li>
+            </ul>
+          </div>
+          <div class="sidebar_base"></div>
         </div>
-
+        <div class="sidebar">
+          <h3>More Useful Links</h3>
+          <div class="sidebar_item">
+            <ul>
+              <li><a href="#">link 1</a></li>
+              <li><a href="#">link 2</a></li>
+              <li><a href="#">link 3</a></li>
+              <li><a href="#">link 4</a></li>
+            </ul>
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+      </div>
+      <div class="content">
+        <h1>Welcome to the CSS3_one Template</h1>
+        <div class="content_item">
+          <p>This simple, fixed width website template is released under a <a
+              href="http://creativecommons.org/licenses/by/3.0">Creative Commons Attribution 3.0 Licence</a>. This means
+            you are free to download and use it for personal and commercial projects. However, you <strong>must leave
+              the 'design from css3templates.co.uk' link in the footer of the template</strong>.</p>
+          <p>This template is written entirely in <strong>HTML5</strong> and <strong>CSS3</strong>.</p>
+          <p>You can view more free CSS3 web templates <a href="http://www.css3templates.co.uk">here</a>.</p>
+          <p>This template is a fully documented 5 page website, with an <a href="examples.html">examples</a> page that
+            gives examples of all the styles available with this design. There is also a working PHP contact form on the
+            contact page.</p>
+        </div>
+      </div>
+      <div class="content">
+        <h1>Browser Compatibility</h1>
+        <div class="content_item">
+          <p>This template has been tested in the following browsers:</p>
+          <ul>
+            <li>Internet Explorer 8</li>
+            <li>Internet Explorer 7</li>
+            <li>FireFox 10</li>
+            <li>Google Chrome 17</li>
+            <li>Safari 4</li>
+          </ul>
+        </div>
+      </div>
     </div>
-
-    <div style="text-align: center; font-size: 0.75em;">Diseño descargado desde <a
-            href="http://www.misplantillas.com/">plantillas web gratis</a>.</div>
+    <footer>
+      <p><a href="./index.html">Inicio</a> | <a href="./mapa/mapa.html">Localizacion y Delimitacion</a> | <a
+          href="./page.html">Incendios</a> | <a href="./another_page.html">Suelo</a> | <a
+          href="./another_page.html">Vegetacion</a>
+      </p>
+      <p>Copyright &copy; CSS3_one | <a href="http://www.css3templates.co.uk">design from
+          css3templates.co.uk</a><!--%@##-->
+      <div style="text-align: center; font-size: 0.75em;">Dise�o descargado desde <a
+          href="http://www.misplantillas.com/">plantillas web gratis</a>.</div><!--##@%--></p>
+    </footer>
+  </div>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script type="text/javascript" src="./js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="./js/jquery.sooperfish.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('ul.sf-menu').sooperfish();
+    });
+  </script>
 </body>
 
 </html>
