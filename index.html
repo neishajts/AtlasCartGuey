@@ -2,7 +2,11 @@
 <html lang="es">
 
 <head>
-  <title>Atlas Rio Guey</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="description" content="website description">
   <meta name="keywords" content="website keywords, website keywords">
   <meta http-equiv="content-type" content="text/html; charset=windows-1252">
@@ -10,128 +14,130 @@
   <link rel="icon" href="./images/favicon_io/favicon.ico">
   <!-- modernizr enables HTML5 elements and feature detects -->
   <script type="text/javascript" src="./js/modernizr-1.5.min.js"></script>
+  <title>Atlas Río Güey</title>
 </head>
 
 <body>
   <div id="main">
     <header>
-      <div id="logo">
-        <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="./index.html">Atlas de Indicadores Ambientales | <span class="logo_colour">Cuenca Rio
-                Guey</span></a></h1>
-          <h2>UCV Campus Maracay</h2>
+      <div class="container__menu">
+        <div id="logo">
+          <div id="logo_text">
+            <!-- class="logo_colour", allows you to change the colour of the text -->
+            <h1><a href="./index.html">Atlas de Indicadores Ambientales | <span class="logo_colour">Cuenca Rio
+                  Guey</span></a></h1>
+            <h2>UCV Campus Maracay</h2>
+          </div>
+          <form method="post" action="#" id="search">
+            <input class="search" type="text" name="search_field" value="search....."
+              onclick="javascript: document.forms['search'].search_field.value=''"><input name="search" type="image"
+              style="float: right;border: 0; margin: 20px 0 0 0;" src="./images/search.png" alt="search" title="search">
+          </form>
         </div>
-        <form method="post" action="#" id="search">
-          <input class="search" type="text" name="search_field" value="search....."
-            onclick="javascript: document.forms['search'].search_field.value=''"><input name="search" type="image"
-            style="float: right;border: 0; margin: 20px 0 0 0;" src="./images/search.png" alt="search" title="search">
-        </form>
+        <nav>
+          <ul class="sf-menu" id="nav">
+            <li class="current"><a href="./index.html">Inicio</a></li>
+            <li><a href="./mapa/mapa.html">Localización y Delimitación</a></li>
+            <li>
+              <a href="#">Clima</a>
+              <ul>
+                <li><a href="#">Estación Maracay CENIAP</a>
+                  <ul>
+                    <li><a href="#">Precipitación - ETO</a>
+                      <ul>
+                        <li><a href="#">Totales Mensuales</a></li>
+                        <li><a href="#">Promedios Mensuales</a></li>
+                        <li><a href="#">Totales Anuales</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Temperatura TM - tm</a>
+                      <ul>
+                        <li><a href="#">Promedios Mensuales</a></li>
+                        <li><a href="#">Promedios Anuales</a></li>
+                        <li><a href="#">Temperatura Media Anual</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Radiación</a>
+                      <ul>
+                        <li><a href="#">Promedios Mensuales</a></li>
+                        <li><a href="#">Promedios Anuales</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Humedad</a>
+                      <ul>
+                        <li><a href="#">Totales Mensuales</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#">Estación Maracay FAgro</a>
+                  <ul>
+                    <li><a href="#">Precipitación</a>
+                      <ul>
+                        <li><a href="#">Promedios Mensuales</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Temperatura TM - tm</a>
+                      <ul>
+                        <li><a href="#">Promedios Mensuales</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Humedad</a>
+                      <ul>
+                        <li><a href="#">Promedios Mensuales</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#">Estación La Trinidad</a>
+                  <ul>
+                    <li><a href="#">Precipitación</a>
+                      <ul>
+                        <li><a href="#">Promedios Mensuales</a></li>
+                        <li><a href="#">Promedios Anuales</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#">Estación Castaño Cabecera</a>
+                  <ul>
+                    <li><a href="#">Precipitación</a>
+                      <ul>
+                        <li><a href="#">Promedios Anuales</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+              </ul>
+            </li>
+            <li><a href="./page.html">Incendios</a></li>
+            <li><a href="./another_page.html">Suelo</a></li>
+            <li><a href="./another_page.html">Relieve</a></li>
+            <li><a href="./another_page.html">Vegetación</a></li>
+            <li><a href="#">Otros Elementos</a>
+              <ul>
+                <li><a href="#">Mapas</a>
+                  <ul>
+                    <li><a href="#">Isoyetas</a></li>
+                    <li><a href="#">Precipitación Interpolada</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Galeria</a>
+                  <ul>
+                    <li><a href="#">Estaciones Climatologicas</a>
+                      <ul>
+                        <li><a href="#">FAgro</a></li>
+                        <li><a href="#">Maracay CENIAP</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <nav>
-        <ul class="sf-menu" id="nav">
-          <li class="current"><a href="./index.html">Inicio</a></li>
-          <li><a href="./mapa/mapa.html">Localizacion y Delimitacion</a></li>
-          <li>
-            <a href="#">Clima</a>
-            <ul>
-              <li><a href="#">Estacion Maracay CENIAP</a>
-                <ul>
-                  <li><a href="#">Precipitacion - ETO</a>
-                    <ul>
-                      <li><a href="#">Totales Mensuales</a></li>
-                      <li><a href="#">Promedios Mensuales</a></li>
-                      <li><a href="#">Totales Anuales</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Temperatura TM - tm</a>
-                    <ul>
-                      <li><a href="#">Promedios Mensuales</a></li>
-                      <li><a href="#">Promedios Anuales</a></li>
-                      <li><a href="#">Temperatura Media Anual</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Radiacion</a>
-                    <ul>
-                      <li><a href="#">Promedios Mensuales</a></li>
-                      <li><a href="#">Promedios Anuales</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Humedad</a>
-                    <ul>
-                      <li><a href="#">Totales Mensuales</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="#">Estacion Maracay FAgro</a>
-                <ul>
-                  <li><a href="#">Precipitacion</a>
-                    <ul>
-                      <li><a href="#">Promedios Mensuales</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Temperatura TM - tm</a>
-                    <ul>
-                      <li><a href="#">Promedios Mensuales</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Humedad</a>
-                    <ul>
-                      <li><a href="#">Promedios Mensuales</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="#">Estación La Trinidad</a>
-                <ul>
-                  <li><a href="#">Precipitacion</a>
-                    <ul>
-                      <li><a href="#">Promedios Mensuales</a></li>
-                      <li><a href="#">Promedios Anuales</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="#">Estación Castano Cabecera</a>
-                <ul>
-                  <li><a href="#">Precipitacion</a>
-                    <ul>
-                      <li><a href="#">Promedios Anuales</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-
-            </ul>
-          </li>
-          <li><a href="./page.html">Incendios</a></li>
-          <li><a href="./another_page.html">Suelo</a></li>
-          <li><a href="./another_page.html">Relieve</a></li>
-          <li><a href="./another_page.html">Vegetacion</a></li>
-          <li><a href="#">Otros Elementos</a>
-            <ul>
-              <li><a href="#">Mapas</a>
-                <ul>
-                  <li><a href="#">Isoyetas</a></li>
-                  <li><a href="#">Precipitación Interpolada</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Galeria</a>
-                <ul>
-                  <li><a href="#">Estaciones Climatologicas</a>
-                    <ul>
-                      <li><a href="#">FAgro</a></li>
-                      <li><a href="#">Maracay CENIAP</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-
-            </ul>
-          </li>
-        </ul>
-      </nav>
     </header>
     <div id="site_content">
       <div id="sidebar_container">
@@ -200,9 +206,9 @@
       </div>
     </div>
     <footer>
-      <p><a href="./index.html">Inicio</a> | <a href="./mapa/mapa.html">Localizacion y Delimitacion</a> | <a
-          href="./page.html">Incendios</a> | <a href="./another_page.html">Suelo</a> | <a
-          href="./another_page.html">Vegetacion</a>
+      <p><a href="../index.html">Inicio</a> | <a href="../mapa/mapa.html">Localización y Delimitación</a> | <a
+          href="../page.html">Incendios</a> | <a href="../another_page.html">Suelo</a> | <a
+          href="../another_page.html">Vegetación</a>
       </p>
       <p>Copyright &copy; CSS3_one | <a href="http://www.css3templates.co.uk">design from
           css3templates.co.uk</a><!--%@##-->
